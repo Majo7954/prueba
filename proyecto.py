@@ -51,6 +51,7 @@ train_datagen = ImageDataGenerator(
 # Validación Cruzada
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
+# Obtener índices de entrenamiento y validación para cada iteración de validación cruzada
 for train_index, val_index in cv.split(X, y):
     X_train, X_val, y_train, y_val = X[train_index], X[val_index], y[train_index], y[val_index]
 
